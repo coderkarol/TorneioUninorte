@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    int n, vet[12], menor=INT_MAX, maior=INT_MIN;
+    cin >> n;
+    for(int i=0; i<n; i++){
+        cin >> vet[i];
+    }    
+    int x=0, y=0;
+    for(int i=0; i<n; i++){
+        if(menor>vet[i]){
+            menor = vet[i];
+            x = i;
+        }
+        if(maior<vet[i]){
+            maior=vet[i];
+            y = i;
+        }
+    }
+    swap(vet[0], vet[x]);
+    swap(vet[n-1], vet[y]);
+    for(int i=0; i<n; i++){
+        cout << vet[i] << " ";
+    }
+    cout << endl;
+    return 0;
+}
